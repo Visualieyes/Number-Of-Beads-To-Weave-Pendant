@@ -1,0 +1,31 @@
+#Problem: Write a function which can count the number of beads in the pendant of n-rows
+
+#Shape of the pendant
+#     .
+#    ...
+#   .....
+#  .......
+# .........
+#...........
+# .........
+#  .......
+#   .....
+#    ...
+#     .
+
+
+#Solution: Once you realize that diamonds are sideways squares, calculating the number of beads is the same as finding its surface area. 
+#          Thus, given length (number of columns) or width (number of rows), and control for handling odd numbered rows, 
+#          we can calculate it using the formula for SA.
+       
+
+def total(rows):                              #Take number of rows as the only parameter
+  while rows % 2 == 1:                        #Function must only input odd numbers of rows
+    sum = (rows//2+1)**2 + (rows//2)**2 
+    return sum  
+
+r = int(input("Enter the number of rows:")) 
+
+
+print(total(r))                               #Output the total number of beads to weave the pendant
+
